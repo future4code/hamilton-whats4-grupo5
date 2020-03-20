@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from 'prop-types';
 import { Mensagem } from "../mensagem/Mensagem";
-import crop2 from "../img/crop2.jpg";
+import crop from "../img/crop.jpeg";
 
 const Template = styled.section`
     color: white;
@@ -14,7 +14,7 @@ const Template = styled.section`
     justify-content: flex-end;
     box-sizing: border-box;
     padding-bottom: 21px;
-    background-image:url(${crop2});
+    background-image:url(${crop});
 `;
 const Form = styled.div`
     
