@@ -2,9 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from 'prop-types';
 import { Mensagem } from "../mensagem/Mensagem";
-import background from "../img/crop.jpeg";
+import crop2 from "../img/crop2.jpg";
 
 const Template = styled.section`
+    color: white;
     display: flex;
     flex-direction: column;
     border: 1px solid black;
@@ -13,14 +14,16 @@ const Template = styled.section`
     justify-content: flex-end;
     box-sizing: border-box;
     padding-bottom: 21px;
-    background-image: ;
+    background-image:url(${crop2});
 `;
 const Form = styled.div`
+    
     position: fixed;
     box-sizing: border-box;
     bottom: 0;
     display: flex;
     width: 500px;
+    height: 40px;
 `;
 const BarraInput = styled.input`
     flex: 1;

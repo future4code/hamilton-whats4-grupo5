@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import {Chat} from "../chat/Chat";
 
 
 const MensagemEnviada = styled.p`
