@@ -2,7 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from 'prop-types';
 import { Mensagem } from "../mensagem/Mensagem";
-import crop from "../img/crop.jpeg";
+import crop from "../img/bg.png";
+import sendMessage from "../img/send-message.png";
+import novoContato from "../img/adicionar-contato.png";
+import logo from "../img/logo.png";
+
+const Header = styled.header`
+    
+        
+`;
 
 const Template = styled.section`
     color: white;
@@ -13,8 +21,8 @@ const Template = styled.section`
     min-height: 100vh;
     justify-content: flex-end;
     box-sizing: border-box;
-    padding-bottom: 21px;
-    background-image:url(${crop});
+    padding-bottom: 60px;
+    background-image:url(${crop}); 
 `;
 const Form = styled.div`
     
@@ -23,11 +31,21 @@ const Form = styled.div`
     bottom: 0;
     display: flex;
     width: 500px;
-    height: 40px;
+    height: 64px;
 `;
 const BarraInput = styled.input`
     flex: 1;
+    width: 420px;
+    
+    
 `;
+const Button = styled.button`
+    background-image: url(${sendMessage});
+    height: 90px;
+    width: 65px;
+    
+`;
+
 export class Chat extends React.Component {
     constructor(props) {
         super(props);
@@ -49,6 +67,7 @@ export class Chat extends React.Component {
     };
     enviarMensagem = () => {
         if (this.state.valorInputUsuario && this.state.valorInputMensagem) {
+            
             const valorDoEstadoDoAutor = this.state.valorInputUsuario;
             const valorDoEstadoDaMensagem = this.state.valorInputMensagem;
             const objetoMensagem = {
@@ -63,6 +82,8 @@ export class Chat extends React.Component {
                 mensagens: listaDeMensagemAtuais
             });
             this.limparCampos();
+
+            
         }
     };
     apertaEnter = event => {
@@ -73,7 +94,7 @@ export class Chat extends React.Component {
     limparCampos = () => {
         this.setState({
             valorInputMensagem: "",
-            valorInputUsuario: ""
+            // valorInputUsuario: ""
         });
     };
     deletarMensagem = event => {
@@ -105,8 +126,11 @@ export class Chat extends React.Component {
         });
 
         return (
-            <Template styled="background-image:url(${crop})">
+            <Template>
                 {listaDeMensagem}
+                <header>
+                    
+                </header>
                 <Form>
                     <input
                         type="text"
@@ -121,7 +145,7 @@ export class Chat extends React.Component {
                         onKeyPress={this.apertaEnter}
                         value={this.state.valorInputMensagem}
                     />
-                    <button onClick={this.enviarMensagem}>Enviar</button>
+                    <Button onClick={this.enviarMensagem}></Button>
                 </Form>
             </Template>
         );
