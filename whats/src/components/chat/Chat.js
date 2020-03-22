@@ -4,18 +4,13 @@ import PropTypes from 'prop-types';
 import { Mensagem } from "../mensagem/Mensagem";
 import crop from "../img/bg.png";
 import sendMessage from "../img/send-message.png";
-import novoContato from "../img/adicionar-contato.png";
-import logo from "../img/logo.png";
 
-const Header = styled.header`
-    
-        
-`;
 
 const Template = styled.section`
     color: white;
     display: flex;
     flex-direction: column;
+    position: relative;
     border: 1px solid black;
     width: 500px;
     min-height: 100vh;
@@ -43,8 +38,9 @@ const Button = styled.button`
     background-image: url(${sendMessage});
     height: 90px;
     width: 65px;
-    
 `;
+
+
 
 export class Chat extends React.Component {
     constructor(props) {
@@ -85,6 +81,7 @@ export class Chat extends React.Component {
 
             
         }
+
     };
     apertaEnter = event => {
         if (event.which === 13) {
@@ -94,7 +91,7 @@ export class Chat extends React.Component {
     limparCampos = () => {
         this.setState({
             valorInputMensagem: "",
-            // valorInputUsuario: ""
+            valorInputUsuario: "",
         });
     };
     deletarMensagem = event => {
